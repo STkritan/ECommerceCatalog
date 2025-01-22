@@ -1,0 +1,28 @@
+﻿@model List<ECommerceCatalog.Models.Product>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <h1>Products</h1>
+    <div class="catalog">
+        @foreach (var product in Model)
+        {
+            <a href="/Product/Details/@product.Id" class="details-button">
+            <div class="card">
+                <img src="@product.ImageUrl" alt="@product.Name" />
+                <h2>@product.Name</h2>
+                <p class="description">@product.Description</p>
+                <p class="price">Price: $@product.Price</p>
+                
+            </div>
+            </a>
+        }
+    </div>
+</body>
+</html>

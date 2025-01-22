@@ -1,0 +1,194 @@
+﻿/* General Styles for Cart */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: #4caf50; /* Bright green for links */
+    font-weight: bold;
+}
+
+    a:hover {
+        color: #ffffff;
+    }
+
+/* Cart Container */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #181818;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Scrollable Table Wrapper */
+.table-wrapper {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    background: #1f1f1f;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    color: #ffffff;
+}
+
+thead th {
+    background: #333333;
+    color: #ffffff;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+tbody tr:nth-child(even) {
+    background: #292929; /* Alternate row background */
+}
+
+tbody tr:nth-child(odd) {
+    background: #1e1e1e;
+}
+
+tfoot td {
+    background: #333333;
+    color: #4caf50; /* Bright green for grand total */
+    font-weight: bold;
+    text-align: right;
+    padding: 10px;
+}
+
+td, th {
+    padding: 15px;
+    border: 1px solid #444;
+}
+
+    td img {
+        max-width: 100px;
+        border-radius: 5px;
+        object-fit: fill;
+    }
+
+/* Buttons and Links */
+.text-center {
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .text-center a {
+        display: inline-block;
+        background: #4caf50;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: background 0.3s, color 0.3s;
+    }
+
+        .text-center a:hover {
+            background: #ffffff;
+            color: #4caf50;
+        }
+
+/* Update and Remove Buttons */
+form input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background: #121212;
+    color: #ffffff;
+    text-align: center;
+}
+
+form button {
+    background: #4caf50;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+    form button:hover {
+        background: #ffffff;
+        color: #4caf50;
+    }
+
+.remove-link {
+    color: #ff4c4c; /* Red for remove links */
+    font-weight: bold;
+}
+
+    .remove-link:hover {
+        color: #ff8585;
+    }
+
+    form input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background: #121212;
+    color: #ffffff;
+    text-align: center;
+}
+
+form button {
+    background: #4caf50;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+form button:hover {
+    background: #ffffff;
+    color: #4caf50;
+}
+    form button.update {
+        background: #292929; /* Green background */
+        color: #4caf50; /* White text */
+    }
+
+        form button.update:hover {
+            background: #ffffff; /* White background on hover */
+            color: #4caf50; /* Green text on hover */
+        }
+
+
+form button.remove {
+    background: #ff4c4c;
+    color: #ffffff;
+}
+
+form button.remove:hover {
+    background: #ffffff;
+    color: #ff4c4c;
+}
+

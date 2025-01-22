@@ -1,0 +1,57 @@
+﻿
+<link rel="stylesheet" href="/css/Home.css" />
+<div class="homepage">
+    <div class="hero">
+        <h1>Welcome to Bishow Bazar</h1>
+        <p>Find the best products at unbeatable prices.</p>
+        <a href="/Product" class="btn">Shop Now</a>
+
+    </div>
+
+    <div class="featured-products">
+        <div class="search-bar">
+            <form action="/Search" method="get">
+                <input type="text" name="query" placeholder="Search in Bishow Bazar..." required>
+                <button type="submit" class="btn search">Search</button>
+            </form>
+        </div>
+        <h2>Featured Products</h2>
+
+        <!-- Display grouped products by category -->
+        @foreach (var category in Model)
+        {
+            <h3>@category.Key</h3> <!-- Category Name -->
+            <div class="product-grid">
+                @foreach (var product in category.Value)
+                {
+                    <a href="/Product/Details/@product.Id" class="btn">
+                        <div class="product-card">
+                        <img src="@product.ImageUrl" alt="@product.Name" class="product-image" />
+                        <h3>@product.Name</h3>
+                        <p class="price">$@product.Price</p>
+                       
+                        </div>
+                    </a>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="features">
+        <h2>Why Shop With Us?</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <h3>High Quality</h3>
+                <p>We offer the best products sourced from trusted vendors.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Fast Delivery</h3>
+                <p>Enjoy fast and reliable shipping on all orders.</p>
+            </div>
+            <div class="feature-item">
+                <h3>24/7 Support</h3>
+                <p>Our customer service team is here to help you anytime.</p>
+            </div>
+        </div>
+    </div>
+</div>

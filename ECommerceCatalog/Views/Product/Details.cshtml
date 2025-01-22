@@ -1,0 +1,66 @@
+﻿@model ECommerceCatalog.Models.Product
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.Name</title>
+    <link rel="stylesheet" href="/css/onestyles.css"> <!-- Link to CSS -->
+    <script>
+        // JavaScript to dynamically update total price
+            function updateTotalPrice() {
+            const priceText = document.getElementById("price").innerText;
+            const price = parseFloat(priceText.replace('Price: $', '').trim()); // Extract the numeric price
+            const quantity = parseInt(document.getElementById("quantity").value);
+            const totalPrice = (price * quantity).toFixed(2);
+            document.getElementById("total-price").innerText = `$${totalPrice}`;
+        }
+    </script>
+</head>
+<body>
+    <div class="product-details">
+        <div class="image-container">
+            <img src="@Model.ImageUrl" alt="@Model.Name" />
+        </div>
+        <div class="details-container">
+            <h1>@Model.Name</h1>
+            <p>@Model.Description</p>
+            <p id="price" class="price">Price: $@Model.Price</p>
+
+            <!-- Quantity Input -->
+            <div class="quantity-selector">
+                <label for="quantity">Quantity:</label>
+                <input type="number"
+                       id="quantity"
+                       name="quantity"
+                       value="1"
+                       min="1"
+                       onchange="updateTotalPrice()" />
+            </div>
+
+            <!-- Total Price -->
+            <p>Total Price: <span id="total-price">$@Model.Price</span></p>
+
+            <!-- Add to Cart Button -->
+            <a id="add-to-cart-link"
+               href="#"
+               class="add-to-cart"
+               onclick="event.preventDefault(); updateCartLink();">
+                Add to Cart
+            </a>
+        </div>
+    </div>
+            <script>
+                function updateCartLink() {
+                    const quantity = parseInt(document.getElementById("quantity").value);
+                    const price = parseFloat(document.getElementById("price").innerText.replace('Price: $', '').trim());
+                    const imageUrl = encodeURIComponent("@Model.ImageUrl"); // Pass imageUrl if needed
+                    const url = `/Cart/AddToCart/@Model.Id?name=@Model.Name&price=${price}&quantity=${quantity}&imageUrl=${imageUrl}`;
+
+                    window.location.href = url; // Redirect to the updated link
+                }
+            </script>
+
+</body>
+</html>
