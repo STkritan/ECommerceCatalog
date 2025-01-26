@@ -20,9 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
-footer.footer {
-    padding: 2px 0;
-    margin: 0;
-    font-size: 0.9em;
-    line-height: 1;
+
+
+a{
+    text-decoration:none;
 }

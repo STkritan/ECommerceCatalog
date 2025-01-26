@@ -57,7 +57,7 @@ h1 {
 
     .card .price {
         font-size: 1.1em;
-        color: white; /* Ensure price text is black */
+        color: green; /* Ensure price text is black */
         margin-bottom: 15px;
     }
 
